@@ -25,9 +25,19 @@ function renderLicenseSection(license) { }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.description}
-#License Badge
-#Answers
+  return `#${data.description}
+#title
+$promptUser()
+.then(answers => console.log(answers))
+.then(promptProject)
+.then(projectAnswers =>console.log(projectAnswers));
+
+#description
+promptUser()
+.then(answers => console.log(answers))
+.then(promptProject)
+.then(projectAnswers =>console.log(projectAnswers));
+
 ${renderLicenseBadge(data.license)}
 
 `;
